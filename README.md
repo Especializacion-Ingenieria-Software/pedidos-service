@@ -75,7 +75,7 @@ The service follows **Domain-Driven Design (DDD)** principles, with clear bounda
 
 ### Folder Structure
 
-python```
+```bash
 order-service/
 
 ├── src/
