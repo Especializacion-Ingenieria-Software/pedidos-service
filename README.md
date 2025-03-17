@@ -74,6 +74,8 @@ The service follows **Domain-Driven Design (DDD)** principles, with clear bounda
    cd order-service
 
 ### Folder Structure
+
+python```
 order-service/
 
 ├── src/
@@ -114,4 +116,4 @@ order-service/
 
 └── pom.xml                                 # Project configuration file (if using Maven)
 
-
+```
