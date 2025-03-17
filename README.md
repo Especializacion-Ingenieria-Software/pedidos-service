@@ -1,54 +1,55 @@
-# OrderService
+# Pedidos-Service
 Responsable de la gestión del ciclo de vida de los pedidos: creación, actualización, y seguimiento
 
 
 ## Overview
 
-The **OrderService** is a microservice responsible for managing the lifecycle of restaurant orders. It handles order creation, order updates, and order tracking. The service also communicates with the **InventoryService** to validate ingredient availability before confirming the order.
+The **pedidos-Service** is a microservice responsible for managing the lifecycle of restaurant pedidos. It handles pedido creation, pedido updates, and pedido tracking. The service also communicates with the **InventoryService** to validate ingredient availability before confirming the pedido.
 
-This service is part of a larger **Restaurant Order Management System**, designed to facilitate online ordering, inventory management, and kitchen communication in a restaurant chain.
+This service is part of a larger **Restaurant pedido Management System**, designed to facilitate online pedidoing, inventory management, and kitchen communication in a restaurant chain.
 
 ## Features
 
-- **Order Creation**: Allows customers to place new orders.
-- **Order Update**: Updates the status and details of existing orders.
-- **Order Tracking**: Provides the ability to track the status of orders.
-- **Integration with InventoryService**: Ensures availability of ingredients before confirming the order.
-- **Event-driven Architecture**: Publishes events like `OrderCreated` to communicate with other services (e.g., **InventoryService**).
+- **pedido Creation**: Allows customers to place new pedidos.
+- **pedido Update**: Updates the status and details of existing pedidos.
+- **pedido Tracking**: Provides the ability to track the status of pedidos.
+- **Integration with InventoryService**: Ensures availability of ingredients before confirming the pedido.
+- **Event-driven Architecture**: Publishes events like `pedidoCreated` to communicate with other services (e.g., **InventoryService**).
 
 ## Architecture
 
 The service follows **Domain-Driven Design (DDD)** principles, with clear boundaries and responsibilities:
 
-- **Entities**: Order, Customer, OrderItem
-- **Value Objects**: DeliveryAddress, OrderTotal
-- **Aggregates**: Order (root)
-- **Repositories**: OrderRepository
-- **Domain Services**: OrderCreationService, PriceCalculationService
+- **Entities**: pedido, Cliente, Item de pedido
+- **Value Objects**: dirección de entrega, total del pedido
+- **Aggregates**: pedido (root)
+- **Repositories**: pedidoRepository
+- **Domain Services**: Servicio de Creación de Pedidos, Servicio de Cálculo de Precios
+
 
 ### Communication with Other Services
 
-- The **OrderService** communicates with the **InventoryService** to validate ingredient availability.
-- Events are published for other services to react to, such as `OrderCreated`, `AvailabilityValidated`, and `InventoryUpdated`.
+- The **pedido-Service** communicates with the **inventario-service** to validate ingredient availability.
+- Events are published for other services to react to, such as `pedidoCreated`, `AvailabilityValidated`, and `InventoryUpdated`.
 
 ## Endpoints
 
-### Create Order
-- **POST** `/orders`
-- **Description**: Creates a new order in the system.
-- **Request Body**: JSON containing order details (items, customer information, delivery address).
-- **Response**: Order confirmation details (order ID, status).
+### Create pedido
+- **POST** `/pedidos`
+- **Description**: Creates a new pedido in the system.
+- **Request Body**: JSON containing pedido details (items, customer information, delivery address).
+- **Response**: pedido confirmation details (pedido ID, status).
 
-### Update Order
-- **PUT** `/orders/{orderId}`
-- **Description**: Updates an existing order.
-- **Request Body**: JSON containing updated order details.
-- **Response**: Updated order details.
+### Update pedido
+- **PUT** `/pedidos/{pedidoId}`
+- **Description**: Updates an existing pedido.
+- **Request Body**: JSON containing updated pedido details.
+- **Response**: Updated pedido details.
 
-### Get Order Status
-- **GET** `/orders/{orderId}`
-- **Description**: Retrieves the current status of an order.
-- **Response**: Order details with status (e.g., "Pending", "Confirmed", "In Progress", "Delivered").
+### Get pedido Status
+- **GET** `/pedidos/{pedidoId}`
+- **Description**: Retrieves the current status of an pedido.
+- **Response**: pedido details with status (e.g., "Pending", "Confirmed", "In Progress", "Delivered").
 
 ## Technologies
 
@@ -70,18 +71,18 @@ The service follows **Domain-Driven Design (DDD)** principles, with clear bounda
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/order-service.git
-   cd order-service
+   git clone https://github.com/yourusername/pedido-service.git
+   cd pedido-service
 
 ### Folder Structure
 
 ```bash
 
-order-service/
+pedidos-service/
 ├── src/
 │   ├── main/
 │   │   ├── java/
-│   │   │   └── com/restaurante/order/
+│   │   │   └── com/restaurante/pedidos/
 │   │   │       ├── application/           # Application logic (controllers, services)
 │   │   │       │   ├── controllers/       # REST controllers (API Endpoints)
 │   │   │       │   └── services/          # Application services (business orchestration)
@@ -93,7 +94,7 @@ order-service/
 │   │   │       ├── infrastructure/        # Infrastructure logic (persistence, messaging)
 │   │   │       │   ├── persistence/       # Repository implementations (DB access)
 │   │   │       │   └── messaging/         # Communication with other services (Kafka, RabbitMQ)
-│   │   │       └── OrderApplication.java   # Microservice entry point (main)
+│   │   │       └── PedidosApplication.java   # Microservice entry point (main)
 │   │   └── resources/                      # Configuration files (e.g., application.properties)
 │   └── test/                              # Unit and integration tests
 └── pom.xml                                 # Project configuration file (if using Maven)
