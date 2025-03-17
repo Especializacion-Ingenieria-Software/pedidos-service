@@ -76,44 +76,26 @@ The service follows **Domain-Driven Design (DDD)** principles, with clear bounda
 ### Folder Structure
 
 ```bash
+
 order-service/
-
 ├── src/
-
 │   ├── main/
-
 │   │   ├── java/
-
 │   │   │   └── com/restaurante/order/
-
 │   │   │       ├── application/           # Application logic (controllers, services)
-
 │   │   │       │   ├── controllers/       # REST controllers (API Endpoints)
-
 │   │   │       │   └── services/          # Application services (business orchestration)
-
 │   │   │       ├── domain/                # Domain logic (aggregates, entities, services)
-
 │   │   │       │   ├── entities/          # Domain entities (e.g., Ingredient, Recipe)
-
 │   │   │       │   ├── repositories/      # Data access repositories
-
 │   │   │       │   ├── services/          # Domain services (e.g., AvailabilityValidationService)
-
 │   │   │       │   └── valueobjects/      # Value objects (e.g., Quantity, UnitOfMeasure)
-
 │   │   │       ├── infrastructure/        # Infrastructure logic (persistence, messaging)
-
 │   │   │       │   ├── persistence/       # Repository implementations (DB access)
-
 │   │   │       │   └── messaging/         # Communication with other services (Kafka, RabbitMQ)
-
 │   │   │       └── OrderApplication.java   # Microservice entry point (main)
-
 │   │   └── resources/                      # Configuration files (e.g., application.properties)
-
 │   └── test/                              # Unit and integration tests
-
 └── pom.xml                                 # Project configuration file (if using Maven)
 
 ```
