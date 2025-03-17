@@ -2,8 +2,6 @@
 Responsable de la gestión del ciclo de vida de los pedidos: creación, actualización, y seguimiento
 
 
-# OrderService
-
 ## Overview
 
 The **OrderService** is a microservice responsible for managing the lifecycle of restaurant orders. It handles order creation, order updates, and order tracking. The service also communicates with the **InventoryService** to validate ingredient availability before confirming the order.
@@ -74,3 +72,27 @@ The service follows **Domain-Driven Design (DDD)** principles, with clear bounda
    ```bash
    git clone https://github.com/yourusername/order-service.git
    cd order-service
+
+### Folder Structure
+inventory-service/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/restaurante/inventario/
+│   │   │       ├── application/           # Application logic (controllers, services)
+│   │   │       │   ├── controllers/       # REST controllers (API Endpoints)
+│   │   │       │   └── services/          # Application services (business orchestration)
+│   │   │       ├── domain/                # Domain logic (aggregates, entities, services)
+│   │   │       │   ├── entities/          # Domain entities (e.g., Ingredient, Recipe)
+│   │   │       │   ├── repositories/      # Data access repositories
+│   │   │       │   ├── services/          # Domain services (e.g., AvailabilityValidationService)
+│   │   │       │   └── valueobjects/      # Value objects (e.g., Quantity, UnitOfMeasure)
+│   │   │       ├── infrastructure/        # Infrastructure logic (persistence, messaging)
+│   │   │       │   ├── persistence/       # Repository implementations (DB access)
+│   │   │       │   └── messaging/         # Communication with other services (Kafka, RabbitMQ)
+│   │   │       └── InventoryApplication.java   # Microservice entry point (main)
+│   │   └── resources/                      # Configuration files (e.g., application.properties)
+│   └── test/                              # Unit and integration tests
+└── pom.xml                                 # Project configuration file (if using Maven)
+
+
