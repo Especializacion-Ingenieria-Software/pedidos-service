@@ -13,7 +13,7 @@ This service is part of a larger **Restaurant pedido Management System**, design
 - **pedido Creation**: Allows customers to place new pedidos.
 - **pedido Update**: Updates the status and details of existing pedidos.
 - **pedido Tracking**: Provides the ability to track the status of pedidos.
-- **Integration with InventoryService**: Ensures availability of ingredients before confirming the pedido.
+- **Integration with inventario-service**: Ensures availability of ingredients before confirming the pedido.
 - **Event-driven Architecture**: Publishes events like `pedidoCreated` to communicate with other services (e.g., **InventoryService**).
 
 ## Architecture
