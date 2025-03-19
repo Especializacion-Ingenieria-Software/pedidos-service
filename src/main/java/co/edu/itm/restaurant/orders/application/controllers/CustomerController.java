@@ -12,23 +12,21 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-    @GetMapping
-    public String getCustomer() {
-        return "Customer completado";
+    @GetMapping("/{customerId}")
+    public Customer getCustomer(@PathVariable Integer customerId) {
+        return customerService.findCustomerById(customerId);
     }
 
 
     @PostMapping
     public Customer createCustomer(@RequestBody Customer customer) {
-
         return customerService.saveCustomer(customer);
     }
 
 
-    @DeleteMapping
-    public String deleteCustomer() {
-        return "Delete customer completado";
+    @DeleteMapping("/{customerId}" )
+    public void deleteCustomer(@PathVariable Integer customerId) {
+        customerService.deleteCustomer(customerId);
     }
-
 
 }

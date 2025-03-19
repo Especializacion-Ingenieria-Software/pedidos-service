@@ -16,4 +16,12 @@ public class CustomerService {
     public Customer saveCustomer(Customer customer) {
         return customerRepository.save(customer);
     }
+
+    public Customer findCustomerById(Integer customerId) {
+        return customerRepository.findById(customerId);
+    }
+
+    public void deleteCustomer(Integer customerId) {
+        customerRepository.delete(customerId);
+    }
 }
