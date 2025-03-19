@@ -24,4 +24,8 @@ public class Order {
     private int customer;
     private List<OrderItem> items;
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
 }
