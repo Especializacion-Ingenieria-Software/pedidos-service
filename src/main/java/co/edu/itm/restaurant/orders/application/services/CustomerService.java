@@ -7,6 +7,8 @@ import co.edu.itm.restaurant.orders.domain.repositories.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
+
 @Service
 public class CustomerService {
 

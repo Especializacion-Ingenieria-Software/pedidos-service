@@ -15,7 +15,7 @@ public class CustomerRepository {
     private ICustomerRepository customerRepository;
 
     public Customer save(Customer customer) {
-        customer.set_id(UUID.randomUUID().hashCode());
+        customer.setId(UUID.randomUUID().hashCode());
         return customerRepository.save(customer);
     }
 

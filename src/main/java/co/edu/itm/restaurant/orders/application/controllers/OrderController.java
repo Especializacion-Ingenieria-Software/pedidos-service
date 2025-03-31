@@ -20,13 +20,11 @@ public class OrderController {
         return orderService.findById(orderId);
     }
 
-    //@PostMapping("/order")
     @PostMapping
-    public Order createOrder(@RequestBody OrderDTO order) {
+public OrderDTO createOrder(@RequestBody OrderDTO order) {
         return orderService.saveOrder(order);
     }
 
-    //@DeleteMapping("/order")
     @GetMapping
     public List<Order> getAllOrders() {
         return orderService.findAll();

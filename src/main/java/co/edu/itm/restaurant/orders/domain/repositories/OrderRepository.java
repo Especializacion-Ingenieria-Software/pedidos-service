@@ -22,7 +22,7 @@ public class OrderRepository {
     public Order save(Order order) {
         try {
             Customer customer = customerRepository.findById(order.getCustomer());
-            System.out.println(customer.get_id());
+            System.out.println(customer.getId());
         }
         catch (Exception e) {
             System.err.println("No se encontro usuario");
