@@ -1,27 +1,21 @@
-package co.edu.itm.restaurant.orders.domain.entities;
+package co.edu.itm.restaurant.orders.application.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
-import java.util.UUID;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Document(collection = "orders")
-public class Order {
+public class OrderDTO {
 
-    @Id
     private Integer id;
     private String comments;
     private double orderTotal;
     private int customer;
-    private Integer items;
-
+    private List<OrderItemDTO> items;
 }
