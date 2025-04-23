@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      # Usando la misma conexión a MongoDB Atlas que está en tu application.properties
+      - SPRING_DATA_MONGODB_URI=mongodb+srv://marlondavid0526:AAEbJExRT0Q8inS4@aplicationitm.05edg.mongodb.net/restaurant
+    networks:
+      - restaurant-network
+
+networks:
+  restaurant-network:
+    driver: bridge
